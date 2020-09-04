@@ -33,7 +33,7 @@ public class PowerScore implements GameScore{
     private void calcularPalabrasIncorrectas(int incorrectCount){
         while(puntos > 0 && incorrectCount > 0){
             puntos -= negativos;
-            //incorrectCount -= 1dsa;
+            incorrectCount -= 1;
         }
     }
 }
