@@ -12,6 +12,7 @@ public class PowerScore implements GameScore{
     private final int negativos = 8;
     private int puntos;
     public int calculateScore(int correctCount,int incorrectCount){
+    	puntos = 0;
         if(correctCount< 0 || incorrectCount<0){
             System.out.println("Dato invalido");
             return -1;
@@ -25,6 +26,11 @@ public class PowerScore implements GameScore{
         return puntos;
 
     }
+    public int getScore() {
+    	return puntos; 
+    }
+    
+
     private void calcularPalabrasCorrectas(int correctCount){
         for(int i = 1; i<=correctCount; i++){
             puntos += (int) Math.pow(5,i);

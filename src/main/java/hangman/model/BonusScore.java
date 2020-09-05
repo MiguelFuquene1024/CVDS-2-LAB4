@@ -23,6 +23,9 @@ public class BonusScore implements GameScore {
 		calcularPalabrasIncorrectas(incorrectCount);
 		return puntos;
 	}
+	
+
+
    private void calcularPalabrasCorrectas(int correctCount){
 		for(int i = 0; i<correctCount; i++){
 			puntos += positivos;

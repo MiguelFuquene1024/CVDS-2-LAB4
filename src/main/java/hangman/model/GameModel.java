@@ -13,6 +13,7 @@
 package hangman.model;
 
 import hangman.model.dictionary.HangmanDictionary;
+import hangman.model.GameScore;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -27,6 +28,7 @@ public class GameModel {
     
     
     private HangmanDictionary dictionary;
+    private GameScore score;
     
     private Scanner scan;
     private String randomWord;
@@ -34,14 +36,16 @@ public class GameModel {
     
     
    
-    public GameModel(HangmanDictionary dictionary){
+    public GameModel(HangmanDictionary dictionary,GameScore score){
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
         randomWord = selectRandomWord();
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        this.score=score;
+        gameScore=score.calculateScore(correctCount, incorrectCount);
+        //gameScore = score.getScore();
         
     }
     
@@ -51,8 +55,8 @@ public class GameModel {
         randomWord = selectRandomWord();
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
-        correctCount = 0;
-        gameScore = 100;
+        correctCount = 0;  
+        gameScore=score.calculateScore(correctCount, incorrectCount);
     }
 
     //setDateTime
@@ -74,10 +78,10 @@ public class GameModel {
         }
         if(positions.size() == 0){
             incorrectCount++;
-            gameScore -= 10;
         } else {
             correctCount += positions.size();
         }
+        gameScore=score.calculateScore(correctCount, incorrectCount);
         return positions;
         
     }

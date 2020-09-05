@@ -31,6 +31,7 @@ public class GUI {
     public static final String GAME_OVER_KEY = "gameoverscreen";
 
     private Language language;
+    private GameScore score;
     private HangmanDictionary dictionary;
     private HangmanPanel hangmanPanel;
 
@@ -43,19 +44,22 @@ public class GUI {
     private GameOverController gameoverController;
     private HighScoreController highScoreController;
 
+
     // Use Factory method
     public GUI(HangmanFactoryMethod factoryMethod) {
         this.language = factoryMethod.createLanguage();
         this.dictionary = factoryMethod.createDictionary();
         this.hangmanPanel = factoryMethod.createHangmanPanel();
+        
     }
 
     @Inject
     // Use Guice constructor
-    public GUI(Language language, HangmanDictionary dictionary, HangmanPanel hangmanPanel){
+    public GUI(Language language, HangmanDictionary dictionary, HangmanPanel hangmanPanel,GameScore score){
         this.language = language;
         this.dictionary= dictionary;
         this.hangmanPanel = hangmanPanel;
+        this.score=score;
     }
 
     //method: setup
@@ -79,7 +83,7 @@ public class GUI {
                 mainFrameController
         );
 
-        GameModel gameModel = new GameModel(dictionary);
+        GameModel gameModel = new GameModel(dictionary,score);
         gameController = new GameController(
                 new GamePanel(gameModel.getCharacterSet(), hangmanPanel, language),
                 gameModel,

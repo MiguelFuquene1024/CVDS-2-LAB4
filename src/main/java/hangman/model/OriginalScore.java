@@ -13,6 +13,7 @@ public class OriginalScore implements GameScore {
 	private int puntos;
 
 	public int calculateScore(int correctCount,int incorrectCount){
+		puntos=100;
 		if(correctCount< 0 || incorrectCount<0){
 			System.out.println("Dato invalido");
 			return -1;
@@ -21,6 +22,8 @@ public class OriginalScore implements GameScore {
 		 return calculoPalabrasIncorrectas(incorrectCount);
 
 	}
+
+
 	private int calculoPalabrasIncorrectas(int incorrectCount){
 		while(puntos >0 && incorrectCount>0){
 			puntos -= negativos;
