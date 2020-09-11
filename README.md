@@ -1,3 +1,22 @@
+# CVDS-2-LAB3
+*Laboratorio 3 de Ciclos de Vida del Desarrollo de Software*
+
+*Integrantes*
+
+
+**Miguel Angel Fuquene Arias**
+**Yarit Yajanny Villalobos**
+
+**En este laboratorio se evaluo:**
+
+- La creacion de pruebas
+- Clases de equivalencia.
+- Casos de frontera y de punto medio.
+- inyecciones
+- metodo Fabrica
+
+
+
 ### Escuela Colombiana de Ingeniería
 
 ### Procesos de Desarrollo de Software
