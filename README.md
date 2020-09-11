@@ -33,6 +33,14 @@
  - Se debe iniciar con 100 puntos y el puntaje no puede ser menor a 0
  - El puntaje resultante debe ser multiplo de 10
  - casos de frontera 0<puntos<100
+ 
+ **Metodo Fabrica y metodo por inyeccion**
+ 
+ ![](img/Captura.JPG)
+ 
+ **Clase de inyeccion para configurar el juego**
+ 
+ ![](img/Captura2.JPG)
      
 
 
